@@ -1,29 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+
 public class EventosManager : MonoBehaviour
 {
-    static float targetevtime = 2.0f;
-    float evtime = targetevtime;// (segundos)
+    public float rolltime = 2.0f;
     GameObject TrueManager;
     int cur_event = -1;
+    float evtime;
+    float ticker;
     // Start is called before the first frame update
     void Start()
     {
-        var ListaEventos = Resources.LoadAll<MonoScript>( "Eventos/");
-        Debug.Log("aaaaaaaaaaaa");
-        Debug.Log(ListaEventos.Length);
+
+        var ListaEventos = GameObject.Find("ListaEventos").GetComponents<IEvBase>();
         TrueManager = new GameObject("aaaa");
+        Debug.Log("aaaaa");
         foreach(var el in ListaEventos){
-            Debug.Log(el.GetClass());
-            TrueManager.AddComponent(el.GetClass());
+            Debug.Log(el.GetType());
+            TrueManager.AddComponent(el.GetType());
         }
         foreach(var el in TrueManager.GetComponents<IEvBase>()){
             Debug.Log(el.GetType());
-            Debug.Log(el.id());
+            Debug.Log(el.id);
         }
-
     }
 
     // Update is called once per frame
@@ -32,26 +30,32 @@ public class EventosManager : MonoBehaviour
         if (cur_event != -1) {
             var ev = TrueManager.GetComponents<IEvBase>()[cur_event];
             bool end = ev.ev_loop();
-            if (end) {
+            evtime -= Time.deltaTime;
+            if (end || (evtime <= 0.0f)) {
                 ev.ev_end();
                 cur_event = -1;
             }
             return;
         }
-        evtime -= Time.deltaTime;
-        if (evtime <= 0.0f) {
+        ticker += Time.deltaTime;
+        if (ticker >= rolltime) {
+            Debug.Log("Rolling");
             rollEvent();
-            evtime = targetevtime;
+            ticker = 0.0f;
         }
     }
     void rollEvent(){
         var evs = TrueManager.GetComponents<IEvBase>();
         int coinflip = Random.Range( 0, 2); // 0 a 1
+        Debug.Log("coinflip: " + coinflip);
         if (coinflip != 0) {
             int evpick = Random.Range(0,evs.Length);
+            var ev = evs[evpick];
             Debug.Log("evento #:" + evpick);
-            evs[evpick].ev_start();
+            ev.ev_start();
             cur_event = evpick;
+            evtime = ev.timer;
+            Debug.Log("Timer de " + evtime);
         }
 
     }

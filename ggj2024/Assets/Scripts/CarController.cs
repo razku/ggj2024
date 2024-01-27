@@ -20,7 +20,7 @@ public class CarController : MonoBehaviour
     Rigidbody2D carRigidbody2D;
 
     // Awake is called when the script instance is being loaded
-    void Awake() 
+    void Awake()
     {
         carRigidbody2D = GetComponent<Rigidbody2D>();
     }
@@ -29,16 +29,16 @@ public class CarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void FixedUpdate() 
+    void FixedUpdate()
     {
         ApplyEngineForce();
         ApplySteering();
@@ -63,7 +63,7 @@ public class CarController : MonoBehaviour
         }
 
         //Limit so we cannot go faster in any direction while accelerating
-        if(carRigidbody2D.velocity.sqrMagnitude > maxSpeed * maxSpeed && accelerationInput > 0) 
+        if(carRigidbody2D.velocity.sqrMagnitude > maxSpeed * maxSpeed && accelerationInput > 0)
         {
             return;
         }
@@ -87,10 +87,10 @@ public class CarController : MonoBehaviour
     void ApplySteering()
     {
         //Limit the cars ability to turn when moving slowly
-        Debug.Log(carRigidbody2D.velocity);
+        //Debug.Log(carRigidbody2D.velocity);
         float minSpeedBeforAllowTurningFactor = (carRigidbody2D.velocity.magnitude / 8);
         minSpeedBeforAllowTurningFactor = Mathf.Clamp01(minSpeedBeforAllowTurningFactor);
-    
+
         //Update the rotation angle based on input
         rotationAngle -= steeringInput * turnFactor * minSpeedBeforAllowTurningFactor;
 
@@ -106,7 +106,7 @@ public class CarController : MonoBehaviour
         carRigidbody2D.velocity = forwardVelocity + rightVelocity * driftFactor;
     }
 
-    public void SetInputVector(Vector2 inputVector) 
+    public void SetInputVector(Vector2 inputVector)
     {
         steeringInput = inputVector.x;
         accelerationInput = inputVector.y;
