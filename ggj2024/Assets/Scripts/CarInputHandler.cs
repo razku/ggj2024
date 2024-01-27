@@ -5,10 +5,12 @@ using UnityEngine;
 public class CarInputController : MonoBehaviour
 {
     public int playerNumber = 1;
+    public int multx = 1;
+    public int multy = 1;
     //Components
     CarController carController;
 
-    void Awake() 
+    void Awake()
     {
         carController = GetComponent<CarController>();
     }
@@ -18,16 +20,16 @@ public class CarInputController : MonoBehaviour
     {
         Vector2 inputVector = Vector2.zero;
 
-        switch (playerNumber) 
+        switch (playerNumber)
         {
             case 1:
-                inputVector.x = Input.GetAxis("Horizontal_P1");
-                inputVector.y = Input.GetAxis("Vertical_P1");
+                inputVector.x = Input.GetAxis("Horizontal_P1") * multx;
+                inputVector.y = Input.GetAxis("Vertical_P1") * multy; ;
                 break;
 
             case 2:
-                inputVector.x = Input.GetAxis("Horizontal_P2");
-                inputVector.y = Input.GetAxis("Vertical_P2");
+                inputVector.x = Input.GetAxis("Horizontal_P2") * multx;
+                inputVector.y = Input.GetAxis("Vertical_P2") * multy;
                 break;
         }
 
