@@ -87,6 +87,7 @@ public class CarController : MonoBehaviour
     void ApplySteering()
     {
         //Limit the cars ability to turn when moving slowly
+        Debug.Log(carRigidbody2D.velocity);
         float minSpeedBeforAllowTurningFactor = (carRigidbody2D.velocity.magnitude / 8);
         minSpeedBeforAllowTurningFactor = Mathf.Clamp01(minSpeedBeforAllowTurningFactor);
     
