@@ -36,8 +36,6 @@ public class CheckPoint : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject initiator;
-
         Collider2D coll1 = P1.GetComponentInChildren<Collider2D>();
         Collider2D coll2 = P2.GetComponentInChildren<Collider2D>();
 
