@@ -11,21 +11,23 @@ public class PowerUp : MonoBehaviour
         GameObject victim;
         Debug.Log("HIT!");
         Collider2D coll1 = P1.GetComponentInChildren<Collider2D>();
-        //Collider2D coll2 = P2.GetComponentInChildren<Collider2D>();
+        Collider2D coll2 = P2.GetComponentInChildren<Collider2D>();
         if (GetUltimateParent(other.transform) == GetUltimateParent(coll1.transform)) {
             initiator = P1;
             victim = P2;
             Debug.Log("Player 1 hit");
         }
-        /*if (GetUltimateParent(other.transform) == GetUltimateParent(coll2.transform)) {
+        else if (GetUltimateParent(other.transform) == GetUltimateParent(coll2.transform)) {
             initiator = P2;
+            victim = P1;
             Debug.Log("Player 2 hit");
-            }*/
+            }
         else{
-            Debug.LogError("!!!!");
+            Debug.LogError("!!!!"+ coll1 + coll2 + P1 + P2 + other);
             return;
         }
-        ListaItems[1].ef_start(initiator,victim);
+        ListaItems[Random.Range(0,ListaItems.Length)].ef_start(initiator,victim);
+        DisablePowerup();
     }
     // Start is called before the first frame update
     void Start()
@@ -39,11 +41,18 @@ public class PowerUp : MonoBehaviour
             Debug.Log(el.msj);
         }
     }
-
+    public float respawn_timer = 10.0f;
+    float respawn_time;
     // Update is called once per frame
     void Update()
     {
-
+        if (respawn_time <= 0.0f) {
+            return;
+        }
+        respawn_time -= Time.deltaTime;
+        if (respawn_time <= 0.0f) {
+            EnablePowerup();
+        }
     }
     Transform GetUltimateParent(Transform child)
     {
@@ -55,5 +64,18 @@ public class PowerUp : MonoBehaviour
         }
 
         return currentParent;
+    }
+    void DisablePowerup(){
+        Collider2D coll = GetComponent<BoxCollider2D>();
+        Sprite spr = GetComponent<Sprite>();
+        coll.enabled = false;
+        GetComponent<Renderer>().enabled = false;
+        respawn_time = respawn_timer;
+    }
+    void EnablePowerup(){
+        Collider2D coll = GetComponent<BoxCollider2D>();
+        Sprite spr = GetComponent<Sprite>();
+        coll.enabled = true;
+        GetComponent<Renderer>().enabled = true;
     }
 }
