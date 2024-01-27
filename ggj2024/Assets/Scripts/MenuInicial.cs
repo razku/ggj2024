@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuInicial : MonoBehaviour
 {
     public void Jugar(){
-        SceneManager.LoadScene("Game"); //Se puede poner el nombre de la escena tambien "Game"
+        //SceneManager.LoadScene("Game"); //Se puede poner el nombre de la escena tambien "Game"
         //SceneManager.GetActiveScene().buildIndex + 1, siguiente escena
     }
 
@@ -17,21 +17,13 @@ public class MenuInicial : MonoBehaviour
 
     public void MapaEspacio(){
         Debug.Log("Espacio...");
+        SceneManager.LoadScene("Game2");
     }
-    public void MapaDesierto(){
-        Debug.Log("Desierto...");
-    }
+    
     public void MapaMar(){
         Debug.Log("Mar...");
+        SceneManager.LoadScene("Game");
     }
 
-    public void Coche1(){
-        Debug.Log("Coche1...");
-    }
-    public void Coche2(){
-        Debug.Log("Coche2...");
-    }
-    public void Coche3(){
-        Debug.Log("Coche3...");
-    }
+   
 }
