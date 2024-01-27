@@ -3,7 +3,7 @@ using UnityEngine;
 public class EventosManager : MonoBehaviour
 {
     public float rolltime = 2.0f;
-    public IEvBase[] ListaEventos;
+    GameObject TrueManager;
     int cur_event = -1;
     float evtime;
     float ticker;
@@ -11,10 +11,14 @@ public class EventosManager : MonoBehaviour
     void Start()
     {
 
-        ListaEventos = GameObject.Find("ListaEventos").GetComponents<IEvBase>();
+        var ListaEventos = GameObject.Find("ListaEventos").GetComponents<IEvBase>();
+        TrueManager = new GameObject("aaaa");
         Debug.Log("aaaaa");
-        Debug.Log(ListaEventos.Length);
         foreach(var el in ListaEventos){
+            Debug.Log(el.GetType());
+            TrueManager.AddComponent(el.GetType());
+        }
+        foreach(var el in TrueManager.GetComponents<IEvBase>()){
             Debug.Log(el.GetType());
             Debug.Log(el.id);
         }
@@ -24,7 +28,7 @@ public class EventosManager : MonoBehaviour
     void Update()
     {
         if (cur_event != -1) {
-            var ev = ListaEventos[cur_event];
+            var ev = TrueManager.GetComponents<IEvBase>()[cur_event];
             bool end = ev.ev_loop();
             evtime -= Time.deltaTime;
             if (end || (evtime <= 0.0f)) {
@@ -41,11 +45,12 @@ public class EventosManager : MonoBehaviour
         }
     }
     void rollEvent(){
+        var evs = TrueManager.GetComponents<IEvBase>();
         int coinflip = Random.Range( 0, 2); // 0 a 1
         Debug.Log("coinflip: " + coinflip);
         if (coinflip != 0) {
-            int evpick = Random.Range(0,ListaEventos.Length);
-            var ev = ListaEventos[evpick];
+            int evpick = Random.Range(0,evs.Length);
+            var ev = evs[evpick];
             Debug.Log("evento #:" + evpick);
             ev.ev_start();
             cur_event = evpick;
