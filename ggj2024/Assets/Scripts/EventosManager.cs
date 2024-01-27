@@ -4,15 +4,14 @@ using UnityEngine;
 using UnityEditor;
 public class EventosManager : MonoBehaviour
 {
-    static float targetevtime = 2.0f;
+    /*static float targetevtime = 2.0f;
     float evtime = targetevtime;// (segundos)
     GameObject TrueManager;
     int cur_event = -1;
     // Start is called before the first frame update
     void Start()
     {
-        var ListaEventos = Resources.LoadAll<MonoScript>( "Eventos/");
-        Debug.Log("aaaaaaaaaaaa");
+        var ListaEventos = Resources.LoadAll<MonoScript>("Eventos/");
         Debug.Log(ListaEventos.Length);
         TrueManager = new GameObject("aaaa");
         foreach(var el in ListaEventos){
@@ -54,5 +53,5 @@ public class EventosManager : MonoBehaviour
             cur_event = evpick;
         }
 
-    }
+    }*/
 }
