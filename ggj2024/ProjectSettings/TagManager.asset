@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3352894587
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Skidmark
+    uniqueID: 65566459
     locked: 0

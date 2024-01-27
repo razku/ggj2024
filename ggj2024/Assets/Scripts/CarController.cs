@@ -110,4 +110,24 @@ public class CarController : MonoBehaviour
         steeringInput = inputVector.x;
         accelerationInput = inputVector.y;
     }
+
+    float getLateralVelocity() 
+    {
+        return Vector2.Dot(transform.right, carRigidbody2D.velocity);
+    }
+
+    public bool IsTireScreeching(out float lateralVelocity, out bool isBraking)
+    {
+        lateralVelocity = getLateralVelocity();
+        isBraking = false;
+
+        if(accelerationInput < 0 && velocityVsUp > 0) 
+        {
+            isBraking = true;
+            return true;
+        }
+        if (Mathf.Abs(getLateralVelocity()) > 20.0f) { return true; }
+
+        return false;
+    }
 }
