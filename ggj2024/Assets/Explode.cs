@@ -24,14 +24,19 @@ public class Explode : MonoBehaviour
             explosionDir.y += upwardsModifier;
             explosionDir.Normalize();
         }
+        Debug.Log("exp dist " + explosionDistance);
+        Debug.Log("exp Force " + explosionForce);
+        Debug.Log("exp Dir " + explosionDir);
+        Debug.Log("calc=" + Mathf.Lerp(0, explosionForce, (1 - explosionDistance)) * explosionDir);
+        Debug.Log("calc (nolerp)=" + (1 - explosionDistance) * explosionDir);
         float falloff = 1 - (explosionDistance / explosionRadius);
         rb.AddForce(explosionDistance * explosionDir,mode);
         //rb.AddForce(Mathf.Lerp(0, explosionForce, (1 - explosionDistance)) * explosionDir, mode);
     }
     // Update is called once per frame
     int ticker = 30;
-    public float range = 20.0f;
-    public float strength = 70.0f;
+    public float range = 40.0f;
+    public float strength = 100.0f;
     void Update()
     {
         ticker = ticker + 1 % 35;
