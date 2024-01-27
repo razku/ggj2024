@@ -5193,7 +5193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &231896352
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15922,7 +15922,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: P2
+  m_Text: 'LAPS: 0/3'
 --- !u!222 &806329262
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22386,7 +22386,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: P1
+  m_Text: 'Laps: 0/3'
 --- !u!222 &1813788080
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22712,8 +22712,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1592256360}
-  - {fileID: 910110302}
   - {fileID: 492329460}
+  - {fileID: 910110302}
   m_Father: {fileID: 130497651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2007585432
