@@ -15073,7 +15073,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.03
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -16183,7 +16183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   driftFactor: 0.95
   accelerationFactor: 50
-  turnFactor: 3.5
+  turnFactor: 3.4
   maxSpeed: 200
   Brake: {fileID: 8300000, guid: 18491fad95c63474ba671748d34ad0fe, type: 3}
 --- !u!114 &1054785612
@@ -16425,7 +16425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1335954998}
-  retrasoInicial: 3.5
+  retrasoInicial: 3.4
 --- !u!82 &1335954998
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16436,7 +16436,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 81413de6863fc65408e750ac66370c59, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8228704309e95f6488f908c4cc8b515a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -16782,7 +16782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   driftFactor: 0.95
   accelerationFactor: 50
-  turnFactor: 3.5
+  turnFactor: 3.4
   maxSpeed: 200
   Brake: {fileID: 8300000, guid: 18491fad95c63474ba671748d34ad0fe, type: 3}
 --- !u!114 &1467747614

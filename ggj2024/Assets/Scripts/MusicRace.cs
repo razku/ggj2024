@@ -3,7 +3,7 @@ using UnityEngine;
 public class ControladorAudio : MonoBehaviour
 {
     public AudioSource audioSource;
-    public float retrasoInicial = 3.5f;
+    public float retrasoInicial = 3.4f;
 
     void Start()
     {
