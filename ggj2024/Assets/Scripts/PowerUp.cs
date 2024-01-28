@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PowerUp : MonoBehaviour
@@ -27,7 +28,7 @@ public class PowerUp : MonoBehaviour
             Debug.LogError("!!!!");
             return;
         }
-        ListaItems[Random.Range(0,ListaItems.Length)].ef_start(initiator,victim);
+        StartCoroutine(DoEffect(initiator, victim));
         DisablePowerup();
     }
     // Start is called before the first frame update
@@ -69,7 +70,10 @@ public class PowerUp : MonoBehaviour
         }
         return currentParent;
     }
-
+    IEnumerator DoEffect(GameObject a, GameObject b){
+        yield return new WaitForSeconds(2);
+        ListaItems[Random.Range(0,ListaItems.Length)].ef_start(a,b);
+    }
     void DisablePowerup(){
         Collider2D coll = GetComponent<BoxCollider2D>();
         Sprite spr = GetComponent<Sprite>();

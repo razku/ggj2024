@@ -12,7 +12,7 @@ public class EvControlSwap : MonoBehaviour, IEvBase
         set => _timer = value;
     }
     public string id{
-        get => "Controles Intercambiados";
+        get => "Car Controls Swapped!";
     }
     public void ev_start(){
         Debug.Log("ha empezado");

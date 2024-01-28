@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:ggj2024/Assets/audioxd/hihihiha.wav.meta
+guid: cad07e952e9d728459550c817c59b476
+=======
+guid: 31986cc4adbadca23b22e202581dbb6b
+>>>>>>> 66a3e8b (jumpscare jumpscare):ggj2024/Assets/Resources/audioxd/hihihiha.wav.meta
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 7
+  defaultSettings:
+    serializedVersion: 2
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+    preloadAudioData: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
