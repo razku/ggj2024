@@ -53,10 +53,7 @@ public class CheckPoint : MonoBehaviour
             if (lapCounts1 <= 3 && player1LapCheckpoint == 3)
             {
                 lapCounts1++;
-
-                if (lapCounts1 < 4) { lapText1.text = "LAPS: " + lapCounts1 + "/3"; }
-
-                player1LapCheckpoint = 0;
+                lapText1.text = "LAPS: " + lapCounts1 + "/3";
             }
             if(lapCounts1 == 4 && player1LapCheckpoint == 3)
             {
@@ -74,10 +71,7 @@ public class CheckPoint : MonoBehaviour
             if (lapCounts2 <= 3 && player2LapCheckpoint == 3)
             {
                 lapCounts2++;
-
-                if (lapCounts2 < 4) { lapText2.text = "LAPS: " + lapCounts2 + "/3"; }
-                
-                player2LapCheckpoint = 0;
+                lapText2.text = "LAPS: " + lapCounts2 + "/3";
             }
             if (lapCounts2 == 4 && player2LapCheckpoint == 3)
             {

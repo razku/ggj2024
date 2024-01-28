@@ -244,5 +244,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac696670128d09e59fe8558c9ec14ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 20
-  strength: 70
+  range: 120
+  strength: 100
