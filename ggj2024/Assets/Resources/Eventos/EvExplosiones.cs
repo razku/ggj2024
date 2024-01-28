@@ -17,16 +17,19 @@ public class EvExplosiones : MonoBehaviour, IEvBase
         set => _timer = value;
     }
     public string id{
-        get => "Controles Intercambiados";
+        get => "¡¡Explosiones!!";
     }
     public void ev_start(){
         rt = areaobj.GetComponent<RectTransform>();
-        int x = 3;
     }
     public bool ev_loop(){
         ticker = ticker + 1;
         if (ticker == 9) {
             ticker = 0;
+            int coinflip = Random.Range(0, 2);
+            if (coinflip == 0) {
+                return false;
+            }
             GameObject exp = Instantiate(explosionobj);
             Vector2 randomPoint = new Vector2( Random.Range(rt.rect.xMin, rt.rect.xMax),
                                                Random.Range(rt.rect.yMin, rt.rect.yMax) ) + (Vector2) rt.transform.position;

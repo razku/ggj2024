@@ -5,7 +5,7 @@ public class EventosManager : MonoBehaviour
     public float rolltime = 2.0f;
     public IEvBase[] ListaEventos;
     int cur_event = -1;
-    float evtime;
+    public float evtime;
     float ticker;
     // Start is called before the first frame update
     void Start()
@@ -52,6 +52,13 @@ public class EventosManager : MonoBehaviour
             evtime = ev.timer;
             Debug.Log("Timer de " + evtime);
         }
-
+    }
+    public IEvBase getEv(){
+        if (cur_event == -1) {
+            return null;
+        }
+        else{
+            return ListaEventos[cur_event];
+        }
     }
 }
