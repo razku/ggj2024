@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: f144e839ce43cf24faa60e808448e03e
+<<<<<<< HEAD:ggj2024/Assets/audioxd/fingers.wav.meta
+guid: aee53c52e7f0a704b9e2fc1cb4ef21e3
+=======
+guid: ddde93b371efd99859dc38417ccc568b
+>>>>>>> 66a3e8b (jumpscare jumpscare):ggj2024/Assets/Resources/audioxd/fingers.wav.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 7

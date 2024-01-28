@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System;
 public class EventosManager : MonoBehaviour
 {
     public float rolltime = 2.0f;
@@ -9,6 +9,7 @@ public class EventosManager : MonoBehaviour
     public GameObject ListaEvs;
     float ticker;
     void Awake(){
+        UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
         if (!ListaEvs) {
             ListaEvs = gameObject;
         }
@@ -46,10 +47,10 @@ public class EventosManager : MonoBehaviour
         }
     }
     void rollEvent(){
-        int coinflip = Random.Range( 0, 2); // 0 a 1
+        int coinflip = UnityEngine.Random.Range( 0, 2); // 0 a 1
         Debug.Log("coinflip: " + coinflip);
         if (coinflip != 0) {
-            int evpick = Random.Range(0,ListaEventos.Length);
+            int evpick = UnityEngine.Random.Range(0,ListaEventos.Length);
             var ev = ListaEventos[evpick];
             Debug.Log("evento #:" + evpick);
             ev.ev_start();

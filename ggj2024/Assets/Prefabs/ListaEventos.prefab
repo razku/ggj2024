@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7717291925808517110}
   - component: {fileID: 8782714962594652466}
   - component: {fileID: 7344918089155405410}
+  - component: {fileID: 1869415780879001880}
   - component: {fileID: 5105439369628888798}
   m_Layer: 0
   m_Name: ListaEventos
@@ -76,6 +77,24 @@ MonoBehaviour:
   _timer: 5
   explosionobj: {fileID: 7467195950036212677, guid: 3edd57e52d0bcd4ac9f043ef47b77b65, type: 3}
   areaobj: {fileID: 0}
+--- !u!114 &1869415780879001880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7301351842183181240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8c2c40a868c5813b6b7351c7cc19d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timer: 5
+  time: 0
+  ticker: 0
+  canvas: {fileID: 1394167867738501488, guid: 70adbb75d35705cba93f26964dddb04f, type: 3}
+  audioFiles: []
+  allImages: []
 --- !u!114 &5105439369628888798
 MonoBehaviour:
   m_ObjectHideFlags: 0

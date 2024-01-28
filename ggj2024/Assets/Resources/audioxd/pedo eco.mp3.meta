@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: aee53c52e7f0a704b9e2fc1cb4ef21e3
+<<<<<<< HEAD:ggj2024/Assets/audioxd/pedo eco.mp3.meta
+guid: f144e839ce43cf24faa60e808448e03e
+=======
+guid: 0585d4ec839a999828933f8d06ceca0b
+>>>>>>> 66a3e8b (jumpscare jumpscare):ggj2024/Assets/Resources/audioxd/pedo eco.mp3.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 7
