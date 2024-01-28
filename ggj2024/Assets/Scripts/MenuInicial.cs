@@ -5,11 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuInicial : MonoBehaviour
 {
-    [SerializeField] private AudioClip sound;
     public void Jugar(){
         //SceneManager.LoadScene("Game"); //Se puede poner el nombre de la escena tambien "Game"
         //SceneManager.GetActiveScene().buildIndex + 1, siguiente escena
-        AudioManager.Instance.EjecutarSonido(sound);
     }
 
     public void Salir(){
