@@ -49,39 +49,46 @@ public class CheckPoint : MonoBehaviour
         {
             if( lapCounts1 == 0 && player1LapCheckpoint == 0)
             {
-                lapCounts1++;
                 lapText1.text = "LAPS: " + lapCounts1 + "/3";
             }
-            if (lapCounts1 <= 3 && player1LapCheckpoint == 3)
+            if (lapCounts1 <= 3 && player1LapCheckpoint >= 3)
             {
                 lapCounts1++;
-                lapText1.text = "LAPS: " + lapCounts1 + "/3";
-                player1LapCheckpoint = 0;
+
+                if (lapCounts1 == 4 && player1LapCheckpoint >= 3)
+                {
+                    //TODO código de victoria
+                    RedWinnerHandler.RedSetup();
+                }
+                else 
+                {
+                    lapText1.text = "LAPS: " + lapCounts1 + "/3";
+                    player1LapCheckpoint = 0;
+                }
+                
             }
-            if (lapCounts1 == 4 && player1LapCheckpoint == 3)
-            {
-                //TODO código de victoria
-                RedWinnerHandler.RedSetup();
-            }
+            
 
             
         }
         if (GetUltimateParent(other.transform) == GetUltimateParent(coll2.transform)) {
             if (lapCounts2 == 0 && player2LapCheckpoint == 0)
             {
-                lapCounts2++;
                 lapText2.text = "LAPS: " + lapCounts2 + "/3";
             }
-            if (lapCounts2 <= 3 && player2LapCheckpoint == 3)
+            if (lapCounts2 <= 3 && player2LapCheckpoint >= 3)
             {
                 lapCounts2++;
-                lapText2.text = "LAPS: " + lapCounts2 + "/3";
-                player2LapCheckpoint = 0;
-            }
-            if (lapCounts2 == 4 && player2LapCheckpoint == 3)
-            {
-                //TODO código de victoria
-                BlueWinnerHandler.BlueSetup();
+                if (lapCounts2 == 4 && player2LapCheckpoint >= 3)
+                {
+                    //TODO código de victoria
+                    BlueWinnerHandler.BlueSetup();
+                }
+                else 
+                {
+                    lapText2.text = "LAPS: " + lapCounts2 + "/3";
+                    player2LapCheckpoint = 0;
+                }
             }
         }
     }

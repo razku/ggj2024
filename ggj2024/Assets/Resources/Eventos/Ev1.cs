@@ -12,7 +12,7 @@ public class Ev1 : MonoBehaviour, IEvBase
         set => _timer = value;
     }
     public string id{
-        get => "Controles Invertidos";
+        get => "Inverted Controls!";
     }
     public void ev_start(){
         Debug.Log("HA EMPEZADO");

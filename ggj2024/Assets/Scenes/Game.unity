@@ -24693,7 +24693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105439369628888798, guid: de3b9cc570036dbeda77582a2964b167, type: 3}
       propertyPath: rolltime
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7301351842183181240, guid: de3b9cc570036dbeda77582a2964b167, type: 3}
       propertyPath: m_Name

@@ -17,7 +17,7 @@ public class EvExplosiones : MonoBehaviour, IEvBase
         set => _timer = value;
     }
     public string id{
-        get => "¡¡Explosiones!!";
+        get => "Explosions!";
     }
     public void ev_start(){
         rt = areaobj.GetComponent<RectTransform>();
