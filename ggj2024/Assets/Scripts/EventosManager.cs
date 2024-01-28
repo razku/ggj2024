@@ -6,12 +6,17 @@ public class EventosManager : MonoBehaviour
     public IEvBase[] ListaEventos;
     int cur_event = -1;
     public float evtime;
+    public GameObject ListaEvs;
     float ticker;
+    void Awake(){
+        if (!ListaEvs) {
+            ListaEvs = gameObject;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
-
-        ListaEventos = GameObject.Find("ListaEventos").GetComponents<IEvBase>();
+        ListaEventos = ListaEvs.GetComponents<IEvBase>();
         Debug.Log("aaaaa");
         Debug.Log(ListaEventos.Length);
         foreach(var el in ListaEventos){
