@@ -28,6 +28,8 @@ public class CheckPoint : MonoBehaviour
     private int player1LapCheckpoint;
     private int player2LapCheckpoint;
 
+    public GameObject BlueWins;
+    public GameObject RedWins;
     void Start()
     {
         P1 = GameObject.Find("P1");
@@ -49,6 +51,7 @@ public class CheckPoint : MonoBehaviour
             {
                 lapCounts1++;
                 lapText1.text = "LAPS: " + lapCounts1 + "/3";
+                RedWins.SetActive(true);
             }
             if (lapCounts1 <= 3 && player1LapCheckpoint == 3)
             {
@@ -58,7 +61,8 @@ public class CheckPoint : MonoBehaviour
             }
             if (lapCounts1 == 4 && player1LapCheckpoint == 3)
             {
-                //TODO código de victoria
+                //TODO cï¿½digo de victoria
+                RedWins.SetActive(true);
             }
 
             
@@ -68,6 +72,7 @@ public class CheckPoint : MonoBehaviour
             {
                 lapCounts2++;
                 lapText2.text = "LAPS: " + lapCounts2 + "/3";
+                BlueWins.SetActive(true);
             }
             if (lapCounts2 <= 3 && player2LapCheckpoint == 3)
             {
@@ -77,7 +82,8 @@ public class CheckPoint : MonoBehaviour
             }
             if (lapCounts2 == 4 && player2LapCheckpoint == 3)
             {
-                //TODO código de victoria
+                //TODO cï¿½digo de victoria
+                BlueWins.SetActive(true);
             }
         }
     }
