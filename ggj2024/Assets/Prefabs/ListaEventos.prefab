@@ -92,7 +92,7 @@ MonoBehaviour:
   _timer: 5
   time: 0
   ticker: 0
-  canvas: {fileID: 1394167867738501488, guid: 70adbb75d35705cba93f26964dddb04f, type: 3}
+  canvasref: {fileID: 1394167867738501488, guid: 70adbb75d35705cba93f26964dddb04f, type: 3}
   audioFiles: []
   allImages: []
 --- !u!114 &5105439369628888798
