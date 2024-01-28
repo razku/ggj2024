@@ -16334,7 +16334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c247a9cd935495e0bf1ab983cfcb46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rolltime: 1
+  rolltime: 100
 --- !u!1 &1467747612
 GameObject:
   m_ObjectHideFlags: 0
