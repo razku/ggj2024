@@ -17,8 +17,6 @@ public class CheckPoint : MonoBehaviour
         return currentParent;
     }
 
-    public RedWinnerHandler RedWinnerHandler;
-    public BlueWinnerHandler BlueWinnerHandler;
     public Text lapText1;
     public Text lapText2;
 
@@ -61,7 +59,6 @@ public class CheckPoint : MonoBehaviour
             if (lapCounts1 == 4 && player1LapCheckpoint == 3)
             {
                 //TODO código de victoria
-                RedWinnerHandler.RedSetup();
             }
 
             
@@ -81,7 +78,6 @@ public class CheckPoint : MonoBehaviour
             if (lapCounts2 == 4 && player2LapCheckpoint == 3)
             {
                 //TODO código de victoria
-                BlueWinnerHandler.BlueSetup();
             }
         }
     }
