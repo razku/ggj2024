@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class TextConnect : MonoBehaviour
 {
-    EventosManager mgr;
+    public EventosManager mgr;
     Text txt;
     void Awake()
     {
-        mgr = GameObject.Find("EventSystem").GetComponent<EventosManager>();
         txt = GetComponent<Text>();
     }
 
     void Update()
     {
         if (mgr.getEv() == null) {
+            txt.text = "";
             return;
         }
         txt.text = mgr.getEv().id;

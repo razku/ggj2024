@@ -5,17 +5,16 @@ using UnityEngine.UI;
 
 public class SliderControl : MonoBehaviour
 {
-    EventosManager mgr;
+    public EventosManager mgr;
     Slider slider;
+    Vector2 initialpos;
+    RectTransform sliderRectTransform;
     // Start is called before the first frame update
     void Awake()
     {
-        var ev = GameObject.Find("EventSystem");
-        Debug.Log("ev" + ev);
-        mgr =  ev.GetComponent<EventosManager>();
-        Debug.Log("mgr" + mgr);
         slider = GetComponent<Slider>();
-        Debug.Log("slider::" + slider);
+        sliderRectTransform = slider.GetComponent<RectTransform>();
+        initialpos = sliderRectTransform.anchoredPosition;
     }
 
     // Update is called once per frame
@@ -23,9 +22,11 @@ public class SliderControl : MonoBehaviour
     {
         IEvBase ev = mgr.getEv();
         if (ev == null) {
+            sliderRectTransform.anchoredPosition = new Vector2(-1000f, -1000f);
             slider.enabled = false;
             return; }
         slider.enabled = true;
+        sliderRectTransform.anchoredPosition = initialpos;
         float preval = mgr.evtime;
         float val = (preval) / (ev.timer);
         slider.value =  val;
