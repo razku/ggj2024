@@ -56,7 +56,7 @@ public class CheckPoint : MonoBehaviour
                 lapText1.text = "LAPS: " + lapCounts1 + "/3";
                 player1LapCheckpoint = 0;
             }
-            if(lapCounts1 == 4 && player1LapCheckpoint == 3)
+            if (lapCounts1 == 4 && player1LapCheckpoint == 3)
             {
                 //TODO código de victoria
             }
