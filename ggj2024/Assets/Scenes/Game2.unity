@@ -7590,7 +7590,7 @@ MonoBehaviour:
   accelerationFactor: 50
   turnFactor: 3.5
   maxSpeed: 200
-  Brake: {fileID: 8300000, guid: 18491fad95c63474ba671748d34ad0fe, type: 3}
+  Brake: {fileID: 0}
 --- !u!114 &861283882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13230,7 +13230,7 @@ MonoBehaviour:
   accelerationFactor: 50
   turnFactor: 3.5
   maxSpeed: 200
-  Brake: {fileID: 8300000, guid: 18491fad95c63474ba671748d34ad0fe, type: 3}
+  Brake: {fileID: 0}
 --- !u!114 &1537974134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13358,6 +13358,10 @@ PrefabInstance:
       propertyPath: mgr
       value: 
       objectReference: {fileID: 919803945}
+    - target: {fileID: 6539696844777319652, guid: ddbdb8c2a0d5b4729b85b50c6de2aff8, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7395921918884868729, guid: ddbdb8c2a0d5b4729b85b50c6de2aff8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 28

@@ -16778,7 +16778,7 @@ MonoBehaviour:
   accelerationFactor: 50
   turnFactor: 3.4
   maxSpeed: 200
-  Brake: {fileID: 8300000, guid: 18491fad95c63474ba671748d34ad0fe, type: 3}
+  Brake: {fileID: 0}
 --- !u!114 &1054785612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17719,7 +17719,7 @@ MonoBehaviour:
   accelerationFactor: 50
   turnFactor: 3.4
   maxSpeed: 200
-  Brake: {fileID: 8300000, guid: 18491fad95c63474ba671748d34ad0fe, type: 3}
+  Brake: {fileID: 0}
 --- !u!114 &1467747614
 MonoBehaviour:
   m_ObjectHideFlags: 0

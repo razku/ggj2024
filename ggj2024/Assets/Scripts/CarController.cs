@@ -19,7 +19,7 @@ public class CarController : MonoBehaviour
     //Components
     Rigidbody2D carRigidbody2D;
     
-    [SerializeField] private AudioClip Brake;
+    //[SerializeField] private AudioClip Brake;
 
     // Awake is called when the script instance is being loaded
     void Awake() 
@@ -129,7 +129,7 @@ public class CarController : MonoBehaviour
             return true;
         }
         if (Mathf.Abs(getLateralVelocity()) > 20.0f) {
-            AudioManager.Instance.EjecutarSonido(Brake);
+            //AudioManager.Instance.EjecutarSonido(Brake);
             return true; }
 
         return false;
