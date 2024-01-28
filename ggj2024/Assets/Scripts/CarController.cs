@@ -18,6 +18,8 @@ public class CarController : MonoBehaviour
 
     //Components
     Rigidbody2D carRigidbody2D;
+    
+    [SerializeField] private AudioClip Brake;
 
     // Awake is called when the script instance is being loaded
     void Awake() 
@@ -29,7 +31,7 @@ public class CarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
@@ -126,8 +128,12 @@ public class CarController : MonoBehaviour
             isBraking = true;
             return true;
         }
-        if (Mathf.Abs(getLateralVelocity()) > 20.0f) { return true; }
+        if (Mathf.Abs(getLateralVelocity()) > 20.0f) {
+            AudioManager.Instance.EjecutarSonido(Brake);
+            return true; }
 
         return false;
     }
+
+   
 }
